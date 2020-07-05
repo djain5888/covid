@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="20sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+
+        android:elevation="10sp"
+        android:translationZ="10sp"
+        app:cardCornerRadius="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="n">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Media -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="title"
+                    android:id="@+id/title"
+                    android:textSize="20sp"
+                    android:textAppearance="?attr/textAppearanceHeadline6" />
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5sp"
+                android:layout_marginLeft="3sp"
+                android:layout_marginRight="3sp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginRight="5sp"
+                    android:layout_marginBottom="5sp"
+                    android:layout_weight="1"
+                    android:elevation="5dp"
+                    android:translationZ="5dp"
+                    app:cardCornerRadius="5sp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:padding="5sp">
+
+                        <TextView
+                            android:id="@+id/confir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Confirmed"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/cardview_dark_background"></TextView>
+
+                        <TextView
+                            android:id="@+id/confirmed_cases"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/confir"
+                            android:layout_marginTop="5sp"
+                            android:gravity="center_horizontal"
+                            android:text="213223"
+                            android:textColor="@color/cardview_shadow_start_color"></TextView>
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+
+                    android:layout_weight="1"
+                    android:elevation="5dp"
+                    android:translationZ="5dp"
+
+                    app:cardCornerRadius="5sp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:padding="5sp">
+
+                        <TextView
+                            android:id="@+id/recover"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/cardview_dark_background"
+                            android:text="Recovered"></TextView>
+
+                        <TextView
+                            android:id="@+id/Recover_cases"
+                            android:layout_width="match_parent"
+                            android:gravity="center_horizontal"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/recover"
+                            android:layout_marginTop="5sp"
+                            android:text="213223"></TextView>
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:elevation="5dp"
+                    android:translationZ="5dp"
+                    app:cardCornerRadius="5sp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:padding="5sp">
+
+                        <TextView
+                            android:id="@+id/death"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/cardview_dark_background"
+
+                            android:gravity="center_horizontal"
+                            android:text="Death"></TextView>
+
+                        <TextView
+                            android:id="@+id/Death_cases"
+                            android:layout_width="match_parent"
+                            android:gravity="center_horizontal"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/death"
+                            android:textColor="@color/cardview_dark_background"
+                            android:layout_marginTop="5sp"
+                            android:text="213223"></TextView>
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:id="@+id/explore"
+                    android:text="Explore" />
+
+                <Button
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="action_2" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        >
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

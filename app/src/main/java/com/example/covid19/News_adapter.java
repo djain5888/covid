@@ -43,8 +43,9 @@ public class News_adapter extends RecyclerView.Adapter<News_adapter.ViewHolder>{
             @Override
             public void onClick(View view) {
                 String url = f1.getArticleList().get(position).getLink();
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
+                Intent i = new Intent(view.getContext(),Web_news.class);
+                i.putExtra("url",f1.getArticleList().get(position).getLink());
+              //  i.setData(Uri.parse(url));
                 view.getContext().startActivity(i);
                // view.startActivity(i);
             }

@@ -89,7 +89,6 @@ public class PlaceholderFragment extends Fragment {
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
         progress=root.findViewById(R.id.progress);
-        final TextView textView = root.findViewById(R.id.section_label);
         r1 = root.findViewById(R.id.recycler_view);
 
         r1.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -151,7 +150,6 @@ public class PlaceholderFragment extends Fragment {
         pageViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
             }
         });
 

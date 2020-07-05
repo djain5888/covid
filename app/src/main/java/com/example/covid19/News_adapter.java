@@ -1,8 +1,11 @@
 package com.example.covid19;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,6 +13,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covid19.Models.Xml_news.RSSFeed;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class News_adapter extends RecyclerView.Adapter<News_adapter.ViewHolder>{
     RSSFeed f1;
@@ -27,8 +37,18 @@ public class News_adapter extends RecyclerView.Adapter<News_adapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull News_adapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull News_adapter.ViewHolder holder, final int position) {
         holder.description.setVisibility(View.GONE);
+        holder.explore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = f1.getArticleList().get(position).getLink();
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                view.getContext().startActivity(i);
+               // view.startActivity(i);
+            }
+        });
        // holder.description.setText(f1.getArticleList().get(position).getDescription());
         holder.title.setText(f1.getArticleList().get(position).getTitle());
 
@@ -43,12 +63,15 @@ public class News_adapter extends RecyclerView.Adapter<News_adapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView description,title;
         ImageView share;
+        Button explore;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             description=itemView.findViewById(R.id.description);
+            explore=itemView.findViewById(R.id.explore);
             title=itemView.findViewById(R.id.title);
              share=itemView.findViewById(R.id.share);
+
 
         }
     }

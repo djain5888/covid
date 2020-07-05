@@ -1,6 +1,8 @@
 package com.example.covid19;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -9,6 +11,8 @@ import com.google.android.material.tabs.TabLayout;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -58,8 +62,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     AppBarConfiguration appBarConfiguration;
 
     OkHttpClient client = new OkHttpClient();
@@ -78,6 +81,19 @@ public class MainActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DrawerLayout drawer;
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open,
+              R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        View view =navigationView.inflateHeaderView(R.layout.nav_header_main);
+
 
 
         Toast.makeText(getBaseContext(),
@@ -106,6 +122,19 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item)
+    {
+        getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
+        if(item.getItemId()==R.id.nav_contact_us)
+        {
+            News_fragment f1= News_fragment.newInstance(2);
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.view_pager,f1).commit();
+        }
+        return false;
+    }
 
 
 }

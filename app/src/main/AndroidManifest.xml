@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Web_news" />
+
         <activity
             android:name=".Main3Activity"
             android:label="@string/title_activity_main3"

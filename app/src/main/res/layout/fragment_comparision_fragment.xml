@@ -128,7 +128,7 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:id="@+id/spin"
+                    android:id="@+id/spin2"
                     android:layout_width="match_parent"
                     android:layout_height="40sp"
                     android:layout_marginLeft="4dp"

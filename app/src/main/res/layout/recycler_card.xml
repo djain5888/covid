@@ -94,6 +94,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Confirmed"
+                            android:textSize="12sp"
 
                             android:gravity="center_horizontal"
                             android:textColor="@color/Red"></TextView>
@@ -104,7 +105,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/confir"
                             android:layout_marginTop="5sp"
-
+                            android:textSize="11sp"
                             android:gravity="center_horizontal"
                             android:text="213223"
                             android:textColor="@color/OrangeRed"></TextView>
@@ -119,6 +120,7 @@
                             android:text="+123345"
                             android:textColor="@color/OrangeRed"
                             android:id="@+id/new_Confirmed"
+                            android:textSize="11sp"
 
 
 
@@ -147,6 +149,8 @@
 
                         <TextView
                             android:id="@+id/recover"
+                            android:textSize="12sp"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
@@ -159,6 +163,8 @@
                             android:gravity="center_horizontal"
                             android:layout_height="wrap_content"
                             android:textColor="@color/LightGreen"
+                            android:textSize="11sp"
+
                             android:layout_below="@+id/recover"
                             android:layout_marginTop="5sp"
                             android:text="213223"></TextView>
@@ -167,6 +173,8 @@
                             android:layout_below="@id/Recover_cases"
                             android:layout_marginTop="5sp"
                             android:layout_width="match_parent"
+                            android:textSize="11sp"
+
                             android:layout_height="wrap_content"
                             android:text="123345"
                             android:textColor="@color/LightGreen"
@@ -201,6 +209,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="@color/gray"
+                            android:textSize="12sp"
 
                             android:gravity="center_horizontal"
                             android:text="Death"></TextView>
@@ -209,6 +218,8 @@
                             android:id="@+id/Death_cases"
                             android:layout_width="match_parent"
                             android:gravity="center_horizontal"
+                            android:textSize="11sp"
+
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/death"
                             android:textColor="@color/gray"
@@ -218,6 +229,8 @@
                             android:layout_alignLeft="@+id/Death_cases"
                             android:layout_below="@id/Death_cases"
                             android:layout_marginTop="5sp"
+                            android:textSize="11sp"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="123345"
@@ -225,10 +238,8 @@
                             android:id="@+id/new_Deaths"
 
 
-                            android:gravity="center"
-                            android:drawableRight="@drawable/ic_baseline_remove_24"
-                            android:drawableLeft="@drawable/ic_baseline_remove_24"></TextView>
-                    </RelativeLayout>
+                            android:gravity="center"></TextView>
+                          </RelativeLayout>
 
 
                 </androidx.cardview.widget.CardView>

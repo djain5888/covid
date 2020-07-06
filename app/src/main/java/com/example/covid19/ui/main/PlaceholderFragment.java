@@ -1,5 +1,6 @@
 package com.example.covid19.ui.main;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.JsonReader;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -278,8 +280,8 @@ public class PlaceholderFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu, menu);
         //menu.clear();
-        MenuItem search=menu.findItem(R.id.action_settings);
-        search.getMenuInfo();
+       // MenuItem search=menu.findItem(R.id.action_settings);
+       // search.getMenuInfo();
 
 
         MenuItem item = menu.findItem(R.id.action_search);
@@ -414,6 +416,65 @@ public class PlaceholderFragment extends Fragment {
 
                     @Override
                     public void onError(Throwable e) {
+                        AlertDialog.Builder builder
+                                = new AlertDialog.Builder(getActivity());
+
+                        builder.setMessage("Do you want to Retry loading page ?");
+
+                        // Set Alert Title
+                        builder.setTitle("Problem Loading Page");
+
+                        // Set Cancelable false
+                        // for when the user clicks on the outside
+                        // the Dialog Box then it will remain show
+                        builder.setCancelable(false);
+
+                        // Set the positive button with yes name
+                        // OnClickListener method is use of
+                        // DialogInterface interface.
+
+                        builder
+                                .setPositiveButton(
+                                        "Yes",
+                                        new DialogInterface
+                                                .OnClickListener() {
+
+                                            @Override
+                                            public void onClick(DialogInterface dialog,
+                                                                int which)
+                                            {
+
+                                                // When the user click yes button
+                                                // then app will close
+                                                callapi();
+                                            }
+                                        });
+
+                        // Set the Negative button with No name
+                        // OnClickListener method is use
+                        // of DialogInterface interface.
+                        builder
+                                .setNegativeButton(
+                                        "No",
+                                        new DialogInterface
+                                                .OnClickListener() {
+
+                                            @Override
+                                            public void onClick(DialogInterface dialog,
+                                                                int which)
+                                            {
+
+                                                // If user click no
+                                                // then dialog box is canceled.
+                                                dialog.cancel();
+                                            }
+                                        });
+
+                        // Create the Alert dialog
+                        AlertDialog alertDialog = builder.create();
+
+                        // Show the Alert Dialog box
+                        alertDialog.show();
                         Log.i("maje123", e.toString());
 
 

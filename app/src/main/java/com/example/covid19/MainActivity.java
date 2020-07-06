@@ -44,6 +44,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.covid19.ui.main.SectionsPagerAdapter;
@@ -68,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     OkHttpClient client = new OkHttpClient();
     RecyclerView r1;
     SearchView s1;
+    String strAppLink ;
+
     List<get_summary> s2;
     ProgressBar p1;
 
@@ -79,9 +82,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         DrawerLayout drawer;
+        final String appPackageName = getApplicationContext().getPackageName();
+        strAppLink = "https://play.google.com/store/apps/details?id=" + appPackageName;
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -126,13 +132,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
         getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-
-        if(item.getItemId()==R.id.nav_contact_us)
-        {
-            News_fragment f1= News_fragment.newInstance(2);
-
-            getSupportFragmentManager().beginTransaction().replace(R.id.view_pager,f1).commit();
+        switch(item.getItemId()) {
+            case R.id.nav_share: {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, strAppLink);
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+                break;
+            }
+            case R.id.nav_feedback:
+                {
+                Intent i1=new Intent(this,Feedback.class);
+                startActivity(i1);
+            }
         }
+
         return false;
     }
 

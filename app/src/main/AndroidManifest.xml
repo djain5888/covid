@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".about_me"></activity>
+        <activity android:name=".Feedback" />
         <activity android:name=".ui.main.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,9 +38,7 @@
         <activity android:name=".comparision" />
         <activity android:name=".full_country_detail" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -1,9 +1,11 @@
 package com.example.covid19;
 
+import android.util.Log;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Model {
+public class Model implements Comparable<Model> {
 
     @SerializedName("Country")
     @Expose
@@ -35,6 +37,7 @@ public class Model {
     @SerializedName("LocationID")
     @Expose
     private String locationID;
+    int value = 0;
 
     public String getCountry() {
         return country;
@@ -116,4 +119,32 @@ public class Model {
         this.locationID = locationID;
     }
 
+    @Override
+    public int compareTo(Model o) {
+        Log.i("helos1",Integer.toString(value));
+        switch (value) {
+            case 1: {
+
+                return o.getConfirmed() - this.getConfirmed();
+            }
+
+
+            case 2: {
+                return this.getConfirmed() - o.getConfirmed();
+            }
+//            case 3: {
+//                int active1 = o.getConfirmed() - o.getRecovered() - o.getDeaths();
+//                int active2 = this.getConfirmed() - this.getRecovered() - this.getDeaths();
+//                return o.getActive() - this.getActive();
+//            }
+//            case 4: {
+//                return o.getDeaths() - this.getDeaths();
+//            }
+           default: {
+                return 0;
+            }
+
+
+        }
+    }
 }

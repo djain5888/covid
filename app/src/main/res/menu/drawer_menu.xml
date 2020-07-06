@@ -15,12 +15,6 @@
                 android:title="Contact us"/>
         </menu>
     </item>
-    <item android:title="Personalize">
-        <menu>
-            <item android:id="@+id/nav_settings"
-                android:title="Change Theme"/>
-        </menu>
-    </item>
 
 
 

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.covid19.Models.Xml_news.RSSFeed;
 
@@ -78,6 +79,7 @@ public class News_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root= inflater.inflate(R.layout.fragment_news_fragment, container, false);
+        final ProgressBar progressBar=root.findViewById(R.id.progress);
         final RecyclerView newsrecycler=root.findViewById(R.id.news_recycler);
         newsrecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         Retrofit retrofit3 = new Retrofit.Builder()
@@ -117,6 +119,7 @@ public class News_fragment extends Fragment {
                         //desc.contains("img src=");
                         News_adapter n1=new News_adapter(news);
                         newsrecycler.setAdapter(n1);
+                        progressBar.setVisibility(View.GONE);
 
                         String str = "ZZZZL <%= dsn %> AFFF <%= AFG %>";
 //                        String s=yourString.substring(yourString.indexOf("img src=") + 3 , yourString.length());

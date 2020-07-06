@@ -145,6 +145,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 {
                 Intent i1=new Intent(this,Feedback.class);
                 startActivity(i1);
+                break;
+            }
+            case R.id.nav_about_us:
+            {
+                Intent i1=new Intent(this,about_me.class);
+                startActivity(i1);
+                break;
+
             }
         }
 

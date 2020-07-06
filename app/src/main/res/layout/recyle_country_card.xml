@@ -64,6 +64,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="3sp"
+                        android:textColor="@color/Black"
                         android:layout_toRightOf="@+id/title"
                         android:text="20 12 3201"
                         android:textSize="20sp"></TextView>
@@ -103,8 +104,9 @@
                                 android:layout_height="wrap_content"
                                 android:text="Confirmed"
                                 android:textSize="12sp"
+
                                 android:gravity="center_horizontal"
-                                android:textColor="@color/cardview_dark_background"></TextView>
+                                android:textColor="@color/Red"></TextView>
 
                             <TextView
                                 android:id="@+id/confirmed_cases"
@@ -115,7 +117,7 @@
                                 android:textSize="11sp"
                                 android:gravity="center_horizontal"
                                 android:text="213223"
-                                android:textColor="@color/cardview_shadow_start_color"></TextView>
+                                android:textColor="@color/Red"></TextView>
                         </RelativeLayout>
 
 
@@ -144,7 +146,7 @@
                                 android:textSize="12sp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:textColor="@color/cardview_dark_background"
+                                android:textColor="@color/Green"
                                 android:text="Recovered"></TextView>
 
                             <TextView
@@ -154,6 +156,7 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="11sp"
                                 android:layout_below="@+id/recover"
+                                android:textColor="@color/Green"
                                 android:layout_marginTop="5sp"
                                 android:text="213223"></TextView>
                         </RelativeLayout>
@@ -218,7 +221,7 @@
 
                         android:text="Active: "
                         android:textAppearance="?attr/textAppearanceBody2"
-                        android:textColor="?android:attr/textColorSecondary"
+                        android:textColor="@color/Black"
                         android:textSize="20sp" />
 
                     <TextView
@@ -228,7 +231,7 @@
                         android:layout_toRightOf="@+id/active"
                         android:text="supporting_text"
                         android:textAppearance="?attr/textAppearanceBody2"
-                        android:textColor="?android:attr/textColorSecondary"
+                        android:textColor="@color/Black"
                         android:textSize="20sp" />
                 </RelativeLayout>
 

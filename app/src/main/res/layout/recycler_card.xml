@@ -43,6 +43,7 @@
                     android:layout_height="wrap_content"
                     android:text="title"
                     android:id="@+id/title"
+                    android:textColor="@color/Black"
                     android:gravity="center_vertical"
 
 
@@ -65,7 +66,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5sp"
                 android:layout_marginLeft="3sp"
                 android:layout_marginRight="3sp"
                 android:orientation="horizontal"
@@ -154,7 +154,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:textColor="@color/LightGreen"
+                            android:textColor="@color/Green"
                             android:text="Recovered"></TextView>
 
                         <TextView
@@ -162,7 +162,7 @@
                             android:layout_width="match_parent"
                             android:gravity="center_horizontal"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/LightGreen"
+                            android:textColor="@color/Green"
                             android:textSize="11sp"
 
                             android:layout_below="@+id/recover"
@@ -177,7 +177,7 @@
 
                             android:layout_height="wrap_content"
                             android:text="123345"
-                            android:textColor="@color/LightGreen"
+                            android:textColor="@color/Green"
                             android:id="@+id/new_Recover"
 
 
@@ -268,6 +268,7 @@
                     android:textSize="20sp"
                     android:layout_width="wrap_content"
                     android:id="@+id/active"
+                    android:textColor="@color/Black"
                     android:layout_centerVertical="true"
 
                     android:layout_alignParentRight="true"

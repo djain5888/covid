@@ -5,5 +5,150 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".about_me">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            app:title="Covid'19"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            ></androidx.appcompat.widget.Toolbar>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85sp"
+            app:cardCornerRadius="5sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginLeft="15sp"
+            android:elevation="15sp"
+            android:translationZ="15sp"
+            android:layout_height="wrap_content">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+
+        >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background"
+                android:backgroundTintMode="add"
+                android:text="Developer Contact"
+                android:textColor="@color/Black"
+                android:textSize="25sp"
+                android:layout_marginTop="25sp"
+
+                android:layout_marginLeft="15sp"
+                android:layout_marginRight="15sp"
+                android:padding="10sp"
+                android:gravity="center_horizontal"
+
+                ></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background"
+            android:text="Name: Deepak Jain"
+            android:textSize="20sp"
+            android:textColor="@color/Black"
+            android:padding="10sp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20sp"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="15sp"
+            ></TextView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background"
+                android:layout_marginTop="18sp"
+                android:id="@+id/linkedin"
+                android:layout_marginRight="15sp"
+                android:layout_marginLeft="15sp"
+                >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LinkedIn "
+            android:textColor="@color/Blue"
+            android:textSize="20sp"
+            android:padding="10sp"
+            android:gravity="center_horizontal"
+           ></TextView>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15sp"
+                    android:src="@drawable/linkedin"></androidx.appcompat.widget.AppCompatImageView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background"
+                android:layout_marginTop="18sp"
+                android:id="@+id/mail"
+                android:layout_marginRight="15sp"
+                android:layout_marginLeft="15sp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mail "
+                    android:textColor="@color/Red"
+                    android:textSize="20sp"
+                    android:padding="10sp"
+                    android:gravity="center_horizontal"
+                    ></TextView>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15sp"
+                    android:src="@drawable/mail"></androidx.appcompat.widget.AppCompatImageView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background"
+                android:layout_marginTop="18sp"
+                android:layout_marginRight="15sp"
+                android:layout_marginLeft="15sp"
+                android:id="@+id/github"
+                android:layout_marginBottom="20sp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Git Hub "
+                    android:textColor="@color/grey_700"
+                    android:textSize="20sp"
+                    android:padding="10sp"
+                    android:gravity="center_horizontal"
+                    ></TextView>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15sp"
+                    android:src="@drawable/git"></androidx.appcompat.widget.AppCompatImageView>
+            </RelativeLayout>
+
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -353,7 +353,7 @@ public class PlaceholderFragment extends Fragment {
                         categories.add("New Recovered cases");
                         categories.add("Total Recovered cases");
                         categories.add("Active Cases");
-                        categories.add("Deaths");
+                        categories.add(" Total Deaths");
                         dataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, categories);
                         // call("India","South-Africa");
                         // call2();
@@ -490,59 +490,6 @@ public class PlaceholderFragment extends Fragment {
 
 
 
-        Retrofit retrofit3 = new Retrofit.Builder()
-                .baseUrl("https://www.who.int/rss-feeds/")
-                .client(new OkHttpClient())
-                .addConverterFactory(SimpleXmlConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
-
-
-
-
-        ApiService apiService3 = retrofit3.create(ApiService.class);
-        // make a request by calling the corresponding method
-
-        Single<RSSFeed> n1=apiService3.getNews();
-        n1.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new SingleObserver<RSSFeed>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.i("new part",e.toString());
-
-
-
-                    }
-
-                    @Override
-                    public void onSuccess(RSSFeed news) {
-                        Log.i("new part",news.getArticleList().get(2).getTitle());
-                        Log.i("desc",news.getArticleList().get(3).getDescription());
-                        String yourString=news.getArticleList().get(2).getDescription();
-                        //desc.contains("img src=");
-
-
-                        String str = "ZZZZL <%= dsn %> AFFF <%= AFG %>";
-//                        String s=yourString.substring(yourString.indexOf("img src=") + 3 , yourString.length());
-//                        Log.i("desc",s);
-                        Pattern pattern = Pattern.compile("<%=(.*?)%>", Pattern.DOTALL);
-                        Matcher matcher = pattern.matcher(str);
-                        while (matcher.find()) {
-                            Log.i("getlost",matcher.group(1));
-                            System.out.println(matcher.group(1));
-                        }
-
-
-
-
-                    }
-                });
 
     }
 

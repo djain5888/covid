@@ -52,7 +52,16 @@ public class News_adapter extends RecyclerView.Adapter<News_adapter.ViewHolder>{
         });
        // holder.description.setText(f1.getArticleList().get(position).getDescription());
         holder.title.setText(f1.getArticleList().get(position).getTitle());
+        holder.share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent activity=new Intent(Intent.ACTION_SEND);
+                activity.setType("text/plain");
+                activity.putExtra(android.content.Intent.EXTRA_TEXT, f1.getArticleList().get(position).getLink());
+                view.getContext().startActivity(activity);
 
+            }
+        });
 
     }
 

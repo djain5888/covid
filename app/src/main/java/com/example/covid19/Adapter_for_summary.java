@@ -2,6 +2,7 @@ package com.example.covid19;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -17,11 +18,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+
 
 public class Adapter_for_summary extends RecyclerView.Adapter<Adapter_for_summary.ViewHolder> implements Filterable, GestureDetector.OnGestureListener {
     private  List<get_summary> listdata;
@@ -45,6 +52,7 @@ public class Adapter_for_summary extends RecyclerView.Adapter<Adapter_for_summar
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(@NonNull Adapter_for_summary.ViewHolder holder, final int position) {
         final List<get_summary> myListData = listdata;
@@ -63,6 +71,29 @@ public class Adapter_for_summary extends RecyclerView.Adapter<Adapter_for_summar
         holder.Confirmed.setText(Integer.toString( listdata.get(position).getTotalConfirmed()));
         holder.Death.setText(Integer.toString( listdata.get(position).getTotalDeaths()));
         holder.Recovered.setText(Integer.toString(listdata.get(position).getTotalRecovered()));
+        holder.new_confirmed.setText("+"+Integer.toString(listdata.get(position).getNewConfirmed()));
+        holder.new_deaths.setText(Integer.toString(listdata.get(position).getNewDeaths()));
+        holder.new_recovered.setText("-"+Integer.toString(listdata.get(position).getNewRecovered()));
+        holder.active.setText("Active: "+Integer.toString(listdata.get(position).getTotalConfirmed()-listdata.get(position).getTotalDeaths()-listdata.get(position).getTotalRecovered()));
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = null;
+        try {
+            date = inputFormat.parse(listdata.get(position).getDate());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        String formattedDate = outputFormat.format(date);
+        holder.Date.setVisibility(View.GONE);
+        // System.out.println(formattedDate);
+//        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
+//        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
+//        LocalDate date = LocalDate.parse(listdata.get(position).getDate(), inputFormatter);
+//        String formattedDate = outputFormatter.format(date);
+      //  holder.Date.setText(formattedDate);
+        Collections.sort(listdata);
+
+       // notifyDataSetChanged();
 
 
     }
@@ -170,20 +201,27 @@ public class Adapter_for_summary extends RecyclerView.Adapter<Adapter_for_summar
     }
 
 
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;
-        public TextView textView,Confirmed,Death,Recovered;
+        public TextView textView,Confirmed,Death,Recovered,Date,active,new_confirmed,new_deaths,new_recovered;
         public Button explore;
         public RelativeLayout relativeLayout;
 
         public ViewHolder(View itemView) {
             super(itemView);
             //this.imageView = (ImageView) itemView.findViewById(R.id.);
+            this.new_confirmed=itemView.findViewById(R.id.new_Confirmed);
+            this.new_recovered=itemView.findViewById(R.id.new_Recover);
+            this.new_deaths=itemView.findViewById(R.id.new_Deaths);
             this.Confirmed=itemView.findViewById(R.id.confirmed_cases);
+            this.active=itemView.findViewById(R.id.active);
             this.Recovered=itemView.findViewById(R.id.Recover_cases);
             this.Death=itemView.findViewById(R.id.Death_cases);
             this.explore=itemView.findViewById(R.id.explore);
             this.textView = (TextView) itemView.findViewById(R.id.title);
+            this.Date=itemView.findViewById(R.id.date);
             //relativeLayout = (RelativeLayout)itemView.findViewById(R.id.relativeLayout);
         }
     }

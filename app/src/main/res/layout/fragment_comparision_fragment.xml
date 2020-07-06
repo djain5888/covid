@@ -12,15 +12,29 @@
         android:layout_height="match_parent"
         tools:context=".comparision">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:gravity="center_horizontal"
+            android:text="Compare and Analyze"
+            android:textColor="#000"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal"
             android:weightSum="3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -45,14 +59,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Countries List"
                         android:layout_gravity="center"
-                        android:textColor="#000"
-
                         android:layout_marginLeft="5dp"
                         android:background="@android:color/transparent"
+
                         android:gravity="center"
-                        android:spinnerMode="dropdown" />
+                        android:spinnerMode="dropdown"
+                        android:text="Countries List"
+                        android:textColor="#000" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -66,11 +80,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:padding="15sp"
-                    android:textColor="#000"
-                    android:layout_weight="1"
-                    android:text="Confirmed"></TextView>
+                    android:text="Confirmed"
+                    android:textColor="#000"></TextView>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -78,33 +92,33 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="15sp"
-                    android:textColor="#000"
+                    android:text="Recovered"
 
 
-                    android:text="Recovered"></TextView>
-
-                <TextView
-                    android:layout_width="match_parent"
-
-                    android:gravity="center"
-                    android:padding="15sp"
-                    android:textColor="#000"
-
-
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Deaths"></TextView>
+                    android:textColor="#000"></TextView>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:padding="15sp"
-                    android:textColor="#000"
-
 
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Active"></TextView>
+                    android:gravity="center"
+
+
+                    android:padding="15sp"
+                    android:text="Deaths"
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+
+
+                    android:padding="15sp"
+                    android:text="Active"
+                    android:textColor="#000"></TextView>
             </LinearLayout>
 
             <LinearLayout
@@ -128,7 +142,7 @@
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/appCompatSpiner"
+                        android:id="@+id/spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -154,41 +168,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:gravity="center"
-                    android:padding="15sp"
-
                     android:layout_weight="1"
+                    android:gravity="center"
+
+                    android:padding="15sp"
                     android:text="- - -"></TextView>
 
                 <TextView
                     android:id="@+id/Recovered1"
                     android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:padding="15sp"
-
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+
+                    android:gravity="center"
+                    android:padding="15sp"
                     android:text="- - -"></TextView>
 
                 <TextView
                     android:id="@+id/Deaths1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="15sp"
-
-
                     android:layout_weight="1"
+                    android:gravity="center"
+
+
+                    android:padding="15sp"
                     android:text="- - -"></TextView>
 
                 <TextView
                     android:id="@+id/Active1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="15sp"
-
                     android:layout_weight="1"
+                    android:gravity="center"
+
+                    android:padding="15sp"
                     android:text="- - -"></TextView>
 
             </LinearLayout>
@@ -238,13 +252,13 @@
                 <TextView
                     android:id="@+id/text2"
                     android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:padding="15sp"
-
-
                     android:layout_height="wrap_content"
-
                     android:layout_weight="1"
+
+
+                    android:gravity="center"
+
+                    android:padding="15sp"
                     android:text="- - -"></TextView>
 
                 <TextView
@@ -260,21 +274,21 @@
                 <TextView
                     android:id="@+id/Deaths2"
                     android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:padding="15sp"
-
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+
+                    android:gravity="center"
+                    android:padding="15sp"
                     android:text="- - -"></TextView>
 
                 <TextView
                     android:id="@+id/Active2"
                     android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:padding="15sp"
-
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+
+                    android:gravity="center"
+                    android:padding="15sp"
                     android:text="- - -"></TextView>
 
 

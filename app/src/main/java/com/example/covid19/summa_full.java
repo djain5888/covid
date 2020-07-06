@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class summa_full {
+public class summa_full  {
 
     @SerializedName("Global")
     @Expose
@@ -40,5 +40,6 @@ public class summa_full {
     public void setDate(String date) {
         this.date = date;
     }
+
 
 }

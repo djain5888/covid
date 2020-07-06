@@ -142,7 +142,7 @@ comparision_fragment extends Fragment {
         spinner2.setAdapter(dataAdapter);
         dataAdapter.notifyDataSetChanged();
 
-        spinner = (Spinner) root.findViewById(R.id.appCompatSpiner);
+        spinner = (Spinner) root.findViewById(R.id.spinner);
         //spinner.setAdapter(dataAdapter);
 
 

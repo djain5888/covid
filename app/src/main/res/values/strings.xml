@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">covid19</string>
+    <string name="app_name">covid19 OverView</string>
     <string name="tab_text_1">Summary Country Wise</string>
     <string name="tab_text_2">Compare Between Countries</string>
     <string name="tab_text_3">WHO Latest News</string>

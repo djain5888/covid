@@ -131,7 +131,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Git Hub "
+                    android:text="GitHub "
                     android:textColor="@color/grey_700"
                     android:textSize="20sp"
                     android:padding="10sp"

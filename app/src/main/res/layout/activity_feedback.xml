@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Feedback">
+    ...
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -33,12 +35,13 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar"></TextView>
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="10sp"
-        android:layout_marginRight="10sp"
 
         android:layout_marginTop="30sp"
+        android:layout_marginRight="10sp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,32 +101,53 @@
                 android:id="@+id/mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background"
                 android:hint="Email address"
                 android:inputType="textEmailAddress"
-                android:background="@drawable/background"
                 android:padding="15sp"
                 android:textColor="@color/colorPrimaryDark"
                 android:theme="@style/EditText.Accent" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="50sp"
-            android:background="@drawable/background"
-            android:text="Submit"
-            android:backgroundTintMode="add"
-            android:backgroundTint="@color/grey_600"
-            android:layout_centerHorizontal="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/submit"
-            android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50sp"
+                android:background="@drawable/background"
+                android:backgroundTint="@color/grey_600"
+                android:backgroundTintMode="add"
+                android:scaleType="centerInside"
+                android:src="@drawable/submit"
+                android:text="Submit" />
+
         </RelativeLayout>
+
+
     </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/white"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-2308747207296972/5120270712"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></com.google.android.gms.ads.AdView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

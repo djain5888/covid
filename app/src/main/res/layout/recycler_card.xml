@@ -16,6 +16,7 @@
 
         android:elevation="10sp"
         android:translationZ="10sp"
+        android:backgroundTintMode="add"
         app:cardCornerRadius="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +26,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="210sp"
+            android:background="@drawable/main_back"
+
             android:orientation="vertical">
 
             <!-- Media -->
@@ -33,22 +36,37 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60sp"
-
-                android:padding="10sp">
-
-                <!-- Title, secondary and supporting text -->
-                <TextView
+                android:layout_height="wrap_content"
+                android:paddingTop="10sp"
+                android:paddingLeft="10sp"
+                android:paddingBottom="4sp"
+                >
+            <!-- Title, secondary and supporting text -->
+                <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:cardCornerRadius="5sp"
+                    android:background="@drawable/background"
+                    android:elevation="10sp"
+                    android:translationZ="10sp"
+
+                    >
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+                        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10sp"
                     android:text="title"
                     android:id="@+id/title"
                     android:textColor="@color/Black"
                     android:gravity="center_vertical"
-
-
                     android:textSize="20sp"
                      />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="60sp"
@@ -260,6 +278,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
+                    android:background="@drawable/background"
+                    android:backgroundTint="@color/white"
+                    android:backgroundTintMode="add"
                     android:layout_marginRight="8dp"
                     android:id="@+id/explore"
                     android:text="Explore" />
@@ -268,7 +289,12 @@
                     android:textSize="20sp"
                     android:layout_width="wrap_content"
                     android:id="@+id/active"
+
+                    android:background="@drawable/background"
+                    android:backgroundTint="@color/white"
+                    android:backgroundTintMode="add"
                     android:textColor="@color/Black"
+                    android:padding="8sp"
                     android:layout_centerVertical="true"
 
                     android:layout_alignParentRight="true"

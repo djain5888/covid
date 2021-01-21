@@ -76,7 +76,7 @@ public class Adapter_for_summary extends RecyclerView.Adapter<Adapter_for_summar
         holder.new_deaths.setText(Integer.toString(listdata.get(position).getNewDeaths()));
         holder.new_recovered.setText("-"+Integer.toString(listdata.get(position).getNewRecovered()));
         holder.active.setText("Active: "+Integer.toString(listdata.get(position).getTotalConfirmed()-listdata.get(position).getTotalDeaths()-listdata.get(position).getTotalRecovered()));
-        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss'Z'");
         SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date date = null;
         try {
